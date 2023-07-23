@@ -1,2 +1,3 @@
 # osu-replay-parser
-.osr files parser with GUI
+
+data saves to stats/current_datetime.txt
