@@ -1,4 +1,5 @@
 import os
+import webbrowser
 from osrparse import Replay, parse_replay_data
 from datetime import datetime
 
@@ -14,7 +15,7 @@ def current_datetime():
     now = datetime.now()
 
     dt = now.strftime("%d_%m_%Y__%H_%M_%S")
-
+    
     return dt
 
 def parser_folder(path):
@@ -52,14 +53,16 @@ def write_data(current_datetime, r, title, acc):
 
     str = '-' * len(title)
 
-    f = open(f"stats/{current_datetime}.txt", 'a')
+    path = f"stats/{current_datetime}.txt"
+
+    f = open(path, 'a')
 
     f.write(f'{str}\n{title}\n{str}')
     f.write(f"\nScore - {r.score}\nMax combo - {r.max_combo}\n300 - {r.count_300}\n100 - {r.count_100}\n50 - {r.count_50}\nX - {r.count_miss}\nAcc - {round(acc, 2)}%\n\n\n")
 
     f.close()
-     
-     
-    
+
+    webbrowser.open('file://' + os.path.realpath(path))
+
 
 
