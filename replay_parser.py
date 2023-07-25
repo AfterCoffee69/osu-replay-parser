@@ -61,8 +61,7 @@ def write_data(current_datetime, r, title, acc):
     f.write(f"\nScore - {r.score}\nMax combo - {r.max_combo}\n300 - {r.count_300}\n100 - {r.count_100}\n50 - {r.count_50}\nX - {r.count_miss}\nAcc - {round(acc, 2)}%\n\n\n")
 
     f.close()
-
-    webbrowser.open('file://' + os.path.realpath(path))
+     
 
 
 
